@@ -10,3 +10,6 @@
 [submodule "third_party/jfml"]
 	path = third_party/jfml
 	url = git@github.com:chinmaygarde/jfml.git
+[submodule "third_party/civet"]
+	path = third_party/civet
+	url = https://github.com/civetweb/civetweb.git

@@ -27,5 +27,9 @@ add_subdirectory(third_party/googlebenchmark EXCLUDE_FROM_ALL)
 
 add_subdirectory(third_party/jfml EXCLUDE_FROM_ALL)
 
+set(CIVETWEB_ENABLE_CXX TRUE)
+set(CIVETWEB_BUILD_TESTING FALSE)
+add_subdirectory(third_party/civet EXCLUDE_FROM_ALL)
+
 # Project
 add_subdirectory(src)
