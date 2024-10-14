@@ -1,3 +1,3 @@
-# A New C++ Project
+# iFiddle
 
-This is a project template Chinmay uses for his C++ projects.
+Nothing to see here yet.

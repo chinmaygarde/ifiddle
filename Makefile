@@ -7,7 +7,7 @@ test: build
 	ctest --test-dir build
 
 bench: build
-	./build/src/new_cpp_project_benchmarks
+	./build/src/ifiddle_benchmarks
 
 build: build/build.ninja
 	cmake --build build
