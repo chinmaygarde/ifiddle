@@ -25,5 +25,7 @@ set(GOOGLETEST_PATH "third_party/googletest" EXCLUDE_FROM_ALL)
 set(BENCHMARK_ENABLE_TESTING FALSE)
 add_subdirectory(third_party/googlebenchmark EXCLUDE_FROM_ALL)
 
+add_subdirectory(third_party/jfml EXCLUDE_FROM_ALL)
+
 # Project
 add_subdirectory(src)

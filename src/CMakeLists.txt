@@ -4,6 +4,11 @@ add_library(ifiddle
   project.cc
 )
 
+target_link_libraries(ifiddle
+  PUBLIC
+    jfml
+)
+
 # Configure Fixtures Location
 get_filename_component(TEST_ASSETS_LOCATION ../assets ABSOLUTE)
 configure_file(fixtures_location.h.in fixtures_location.h @ONLY)
