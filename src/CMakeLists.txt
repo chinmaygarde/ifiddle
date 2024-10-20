@@ -7,7 +7,6 @@ add_library(ifiddle
 target_link_libraries(ifiddle
   PUBLIC
     jfml
-    civetweb-cpp
 )
 
 # Configure Fixtures Location
