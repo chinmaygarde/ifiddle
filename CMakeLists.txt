@@ -30,6 +30,11 @@ FetchContent_Declare(wasmtime_sdk
 )
 FetchContent_MakeAvailable(wasmtime_sdk)
 
+FetchContent_Declare(wasmclang
+  URL https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/clang+llvm-18.1.8-arm64-apple-macos11.tar.xz
+)
+FetchContent_MakeAvailable(wasmclang)
+
 project(ifiddle)
 
 enable_testing()

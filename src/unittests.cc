@@ -7,7 +7,7 @@
 namespace fiddle::testing {
 
 TEST(EmptyTest, CanCreateWasmEngine) {
-  wasmtime::Config config;
+  wasmtime::Engine engine;
 }
 
 }  // namespace fiddle::testing
