@@ -40,6 +40,11 @@ target_link_libraries(ifiddle
     wasmtime_c
 )
 
+target_include_directories(ifiddle
+  PUBLIC
+    ../third_party/wasmtime-cpp/include
+)
+
 target_compile_definitions(ifiddle PUBLIC -DIMPELLER_HPP_NAMESPACE=fiddle)
 
 # Configure Fixtures Location

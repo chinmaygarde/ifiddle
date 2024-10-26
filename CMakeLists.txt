@@ -13,6 +13,8 @@ EnableCCache()
 
 set(IMPELLER_SDK_SHA b7c3af43f90ac9aaf66dbd10b922c25addd9c3db)
 
+cmake_policy(SET CMP0135 NEW)
+
 include(FetchContent)
 FetchContent_Declare(
   impeller_sdk
@@ -34,16 +36,8 @@ enable_testing()
 include(GoogleTest)
 include(CTest)
 
-# Google Test
 add_subdirectory(third_party/googletest EXCLUDE_FROM_ALL)
-
-# Google Benchmark
-set(GOOGLETEST_PATH "third_party/googletest")
-set(BENCHMARK_ENABLE_TESTING FALSE)
-add_subdirectory(third_party/googlebenchmark EXCLUDE_FROM_ALL)
-
 add_subdirectory(third_party/jfml EXCLUDE_FROM_ALL)
-
 set(CIVETWEB_ENABLE_CXX TRUE)
 set(CIVETWEB_BUILD_TESTING FALSE)
 add_subdirectory(third_party/civet EXCLUDE_FROM_ALL)

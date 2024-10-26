@@ -2,13 +2,12 @@
 #include "gtest/gtest.h"
 #include "impeller.hpp"
 #include "render_engine.h"
+#include "wasmtime.hh"
 
 namespace fiddle::testing {
 
-TEST(EmptyTest, EmptyTest) {
-  const auto& engine = RenderEngine::Get();
-  Paint paint;
-  ASSERT_EQ(ImpellerGetVersion(), IMPELLER_VERSION);
+TEST(EmptyTest, CanCreateWasmEngine) {
+  wasmtime::Config config;
 }
 
 }  // namespace fiddle::testing
