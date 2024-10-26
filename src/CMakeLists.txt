@@ -1,3 +1,5 @@
+
+# Impeller
 add_library(impeller SHARED IMPORTED)
 set_target_properties(impeller
   PROPERTIES
@@ -7,6 +9,7 @@ target_include_directories(impeller INTERFACE ${impeller_sdk_SOURCE_DIR}/include
 list(APPEND CMAKE_INSTALL_RPATH ${impeller_sdk_SOURCE_DIR}/lib)
 list(APPEND CMAKE_BUILD_RPATH ${impeller_sdk_SOURCE_DIR}/lib)
 
+# Wasmtime
 add_library(wasmtime_c SHARED IMPORTED)
 set_target_properties(wasmtime_c
   PROPERTIES
@@ -16,11 +19,18 @@ target_include_directories(wasmtime_c INTERFACE ${wasmtime_sdk_SOURCE_DIR}/inclu
 list(APPEND CMAKE_INSTALL_RPATH ${wasmtime_sdk_SOURCE_DIR}/lib)
 list(APPEND CMAKE_BUILD_RPATH ${wasmtime_sdk_SOURCE_DIR}/lib)
 
-
-# Library
+# iFiddle
 add_library(ifiddle
-  project.h
+  compilation_engine.cc
+  compilation_engine.h
+  execution_engine.cc
+  execution_engine.h
   project.cc
+  project.h
+  render_engine.cc
+  render_engine.h
+  server_engine.cc
+  server_engine.h
 )
 
 target_link_libraries(ifiddle
@@ -29,6 +39,8 @@ target_link_libraries(ifiddle
     impeller
     wasmtime_c
 )
+
+target_compile_definitions(ifiddle PUBLIC -DIMPELLER_HPP_NAMESPACE=fiddle)
 
 # Configure Fixtures Location
 get_filename_component(TEST_ASSETS_LOCATION ../assets ABSOLUTE)
@@ -44,20 +56,7 @@ target_link_libraries(ifiddle_tests
 )
 target_include_directories(ifiddle_tests
   PUBLIC
-    ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR} # For Fixtures
 )
 
 gtest_discover_tests(ifiddle_tests)
-
-# Benchmarks
-add_executable(ifiddle_benchmarks
-  benchmarks.cc
-)
-target_link_libraries(ifiddle_benchmarks
-  ifiddle
-  benchmark::benchmark
-)
-target_include_directories(ifiddle_benchmarks
-  PUBLIC
-    ${CMAKE_CURRENT_BINARY_DIR}
-)

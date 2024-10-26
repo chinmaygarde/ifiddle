@@ -7,7 +7,7 @@ include(CMakeToolboxInitialize)
 
 CMakeToolboxInitialize()
 
-SetCAndCXXStandard(11 20)
+SetCAndCXXStandard(11 17)
 
 EnableCCache()
 
@@ -29,8 +29,6 @@ FetchContent_Declare(wasmtime_sdk
 FetchContent_MakeAvailable(wasmtime_sdk)
 
 project(ifiddle)
-
-# set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 
 enable_testing()
 include(GoogleTest)
