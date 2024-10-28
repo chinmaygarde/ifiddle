@@ -1,3 +1,4 @@
 #pragma once
 
 #cmakedefine TEST_ASSETS_LOCATION "@TEST_ASSETS_LOCATION@" "/"
+#cmakedefine TEST_BUILD_LOCATION "@TEST_BUILD_LOCATION@" "/"

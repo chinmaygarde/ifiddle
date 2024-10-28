@@ -30,10 +30,10 @@ FetchContent_Declare(wasmtime_sdk
 )
 FetchContent_MakeAvailable(wasmtime_sdk)
 
-FetchContent_Declare(wasmclang
-  URL https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/clang+llvm-18.1.8-arm64-apple-macos11.tar.xz
+FetchContent_Declare(wasi_sdk
+  URL https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-24/wasi-sdk-24.0-arm64-macos.tar.gz
 )
-FetchContent_MakeAvailable(wasmclang)
+FetchContent_MakeAvailable(wasi_sdk)
 
 project(ifiddle)
 

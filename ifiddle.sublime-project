@@ -2,7 +2,7 @@
   "build_systems": [
     {
       "name": "iFiddle Build All",
-      "shell_cmd": "make test",
+      "shell_cmd": "make build && ./build/src/ifiddle_tests",
       "working_dir": "${project_path}",
       "file_regex": "(.*):(\\d+):(\\d+)(.*)",
       "shell": true,
